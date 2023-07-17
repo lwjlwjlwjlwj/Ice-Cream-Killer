@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="product-info">
+    <view wx:if="{{matchedData && matchedData.name}}" class="product-name">{{matchedData.name}}</view>
+    <view wx:if="{{matchedData && matchedData.price}}" class="product-price">价格：{{matchedData.price}}</view>
+    <view wx:if="{{!matchedData && scanResult}}" class="not-recommended">无相关数据</view>
+    <view wx:if="{{matchedData && matchedData.price > 5}}" class="not-recommended">不建议购买</view>
+  </view>
+  <button class="scan-button" bindtap="scanCode">扫码</button>
+  <view class="scan-result">{{scanResult}}</view>
+</view>
