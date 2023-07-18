@@ -1,6 +1,7 @@
 <view class="container">
   <!-- 显示用户上传的价格信息 -->
-  <view wx:if="{{userUploadPrice.length > 0}}" class="price-table">
+  <view class="price-table" wx:if="{{userUploadPrice.length > 0}}">
+    <view class="table-row"><view class="tabletext">其他用户上传的价格</view></view>
     <view class="table-row">
       <view class="table-header1">价格1</view>
       <view class="table-header2">价格2</view>
@@ -12,7 +13,6 @@
       <view class="table-cell3">{{userUploadPrice[2]}}</view>
     </view>
   </view>
-  <view wx:if="{{userUploadPrice.length > 0}}" class="tabletext">其他用户上传的价格</view>
 
   <view class="product-info">
     <view wx:if="{{matchedData && matchedData.name}}" class="product-name">{{matchedData.name}}</view>
@@ -40,4 +40,5 @@
   </view>
   <button class="scan-button" bindtap="scanCode">扫码</button>
   <view class="scan-result">{{scanResult}}</view>
+  <view class="version">Version 0.4.1</view>
 </view>

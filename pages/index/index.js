@@ -24,8 +24,24 @@ Page({
         self.setData({
           scanResult: scanResult
         });
-
+      if (scanResult.length != 13) {
+        self.setData({
+          scanResult: '',
+          matchedData: {},
+          showUploadButton: false,
+          showModal: false,
+          priceInput: '',
+          userUploadPrice: []
+        })
+        wx.showToast({
+          title: '无效的条形码',
+          icon: 'none',
+          duration: 2000
+        });
+      } else {
+        // 扫描结果符合要求，继续处理
         self.matchData(scanResult);
+      }
       },
       fail: function (res) {
         console.log(res);
