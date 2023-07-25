@@ -40,5 +40,5 @@
   </view>
   <button class="scan-button" bindtap="scanCode">扫码</button>
   <view class="scan-result">{{scanResult}}</view>
-  <view class="version">Version 0.4.1</view>
+  <view class="version">Version 0.4.2</view>
 </view>

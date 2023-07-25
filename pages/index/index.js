@@ -83,7 +83,6 @@ Page({
     });
   },
 
-
   getUserUploadPrice: function (id) {
     let self = this;
 
@@ -116,7 +115,6 @@ Page({
       }
     });
   },
-
 
   handlePriceInput: function (e) {
     let priceInput = e.detail.value;
@@ -179,7 +177,7 @@ Page({
       wx.showToast({
         title: '提交成功',
         icon: 'success',
-        duration: 2000
+        duration: 2000,
       });
     } else {
       console.log("请输入有效的价格（大于0且小于49）");
@@ -259,6 +257,11 @@ Page({
             success: function (res) {
               console.log("数据更新成功");
               // 添加成功后的回调逻辑
+
+              self.setData({
+                userUploadPrice: []
+              });
+              self.getUserUploadPrice(id);//重新获得用户数据
             },
             fail: function (res) {
               console.error(res);
@@ -276,6 +279,11 @@ Page({
             success: function (res) {
               console.log("数据新增成功");
               // 添加成功后的回调逻辑
+
+              self.setData({
+                userUploadPrice: []
+              });
+              self.getUserUploadPrice(id);//重新获得用户数据
             },
             fail: function (res) {
               console.error(res);
